@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 Python Arcade | Play Classic Games</title>
+    <meta name="description"
+        content="Play classic games in your browser. Text-based games and arcade action games - all free!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="stars"></div>
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">PYTHON<span class="accent">ARCADE</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#text-games">Text Games</a></li>
+                <li><a href="#arcade-games">Arcade Games</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🎯 Play Instantly in Browser</div>
+            <h1 class="hero-title">
+                <span class="glitch" data-text="ARCADE">ARCADE</span>
+                <span class="subtitle">EXPERIENCE</span>
+            </h1>
+            <p class="hero-description">
+                Play classic games right in your browser - no downloads, no installation needed!
+                Text adventures and arcade action games all in one place.
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">22</span>
+                    <span class="stat-label">Total Games</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Text Games</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">11</span>
+                    <span class="stat-label">Arcade Games</span>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#text-games" class="btn btn-primary">
+                    <span class="btn-icon">📝</span>
+                    Text Games
+                </a>
+                <a href="#arcade-games" class="btn btn-secondary">
+                    <span class="btn-icon">🕹️</span>
+                    Arcade Games
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="arcade-machine">
+                <div class="screen">
+                    <div class="screen-content">
+                        <pre class="terminal-preview">
+> Welcome to Python Arcade!
+
+🎴 Blackjack
+🐍 Snake Game  
+✊ Rock Paper Scissors
+🏓 Pong
+
+Select a game to play...</pre>
+                    </div>
+                </div>
+                <div class="controls">
+                    <div class="joystick"></div>
+                    <div class="buttons">
+                        <div class="arcade-btn red"></div>
+                        <div class="arcade-btn blue"></div>
+                        <div class="arcade-btn green"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games-section">
+        <div class="section-header">
+            <h2 class="section-title">🎮 All Games</h2>
+            <p class="section-subtitle">Choose your adventure - all games play instantly in browser!</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="tab active" data-filter="all">All Games</button>
+            <button class="tab" data-filter="text">📝 Text Games</button>
+            <button class="tab" data-filter="arcade">🕹️ Arcade Games</button>
+        </div>
+
+        <div class="games-grid" id="gamesGrid">
+            <!-- Games will be dynamically inserted -->
+        </div>
+    </section>
+
+    <!-- Text Games Section -->
+    <section id="text-games" class="category-section">
+        <div class="section-header">
+            <h2 class="section-title">📝 Text Games</h2>
+            <p class="section-subtitle">Classic text-based adventures and puzzles</p>
+        </div>
+        <div class="games-grid text-grid" id="textGamesGrid">
+            <!-- Text games will be inserted here -->
+        </div>
+    </section>
+
+    <!-- Arcade Games Section -->
+    <section id="arcade-games" class="category-section">
+        <div class="section-header">
+            <h2 class="section-title">🕹️ Arcade Games</h2>
+            <p class="section-subtitle">Action-packed arcade classics</p>
+        </div>
+        <div class="games-grid arcade-grid" id="arcadeGamesGrid">
+            <!-- Arcade games will be inserted here -->
+        </div>
+    </section>
+
+    <!-- Game Modal -->
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Game Name</h3>
+                <button class="modal-close" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Text Game Terminal -->
+                <div class="terminal-container" id="terminalContainer">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                        <span class="terminal-title">Python Arcade Terminal</span>
+                    </div>
+                    <div class="terminal" id="terminal">
+                        <div class="terminal-output" id="terminalOutput"></div>
+                        <div class="terminal-input-line">
+                            <span class="prompt">&gt;</span>
+                            <input type="text" id="terminalInput" class="terminal-input" autofocus>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arcade Game Canvas -->
+                <div class="game-canvas-container" id="gameCanvasContainer" style="display: none;">
+                    <canvas id="gameCanvas" width="600" height="600"></canvas>
+                    <div class="game-instructions" id="gameInstructions"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="game-controls" id="gameControls">
+                    <button class="btn btn-secondary" id="restartGame">
+                        <span class="btn-icon">🔄</span>
+                        Restart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-icon">🎮</span>
+                <span class="logo-text">PYTHON<span class="accent">ARCADE</span></span>
+            </div>
+            <p class="footer-text">All games run in browser - no installation needed! 🚀</p>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#games">Games</a>
+                <a href="#text-games">Text</a>
+                <a href="#arcade-games">Arcade</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="games.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
