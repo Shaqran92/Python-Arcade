@@ -33,8 +33,6 @@ A **fully browser-based arcade website** featuring 22 playable games — from te
 | 10 | **Tic Tac Toe** | ❌ | Play X and O against a smart AI |
 | 11 | **Word Scramble** | 🔤 | Unscramble letters to find the hidden word |
 
-![Text Games](screenshots/text-games.png)
-
 ### 🕹️ Arcade Games
 
 | # | Game | Icon | Description |
@@ -50,8 +48,6 @@ A **fully browser-based arcade website** featuring 22 playable games — from te
 | 9 | **Asteroids** | ☄️ | Pilot your ship, dodge and blast asteroids |
 | 10 | **Minesweeper** | 💣 | Reveal cells, flag mines, don't explode |
 | 11 | **Memory Match** | 🃏 | Flip cards and find matching emoji pairs |
-
-![Arcade Games](screenshots/arcade-games.png)
 
 ---
 
@@ -122,8 +118,6 @@ Arcade/
 - **Smooth modal transitions** for game launch
 - **Responsive canvas scaling** — games maintain aspect ratio at any screen size
 
-![Breakout Game](screenshots/breakout-game.png)
-
 ---
 
 ## 🎮 Game Controls
@@ -169,4 +163,5 @@ Contributions are welcome! Feel free to:
   Made with ❤️ and JavaScript<br>
   <strong>No frameworks were harmed in the making of this project.</strong>
 </p>
+
 
