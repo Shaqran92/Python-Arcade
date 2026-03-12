@@ -2,8 +2,6 @@
 
 A **fully browser-based arcade website** featuring 22 playable games — from text-based adventures to canvas-rendered arcade classics. Built entirely with **vanilla HTML, CSS, and JavaScript** — zero frameworks, zero dependencies.
 
-![Homepage](screenshots/homepage.png)
-
 ---
 
 ## ✨ Features
@@ -171,3 +169,4 @@ Contributions are welcome! Feel free to:
   Made with ❤️ and JavaScript<br>
   <strong>No frameworks were harmed in the making of this project.</strong>
 </p>
+
